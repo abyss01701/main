@@ -1,0 +1,119 @@
+/* Existing styles */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+body {
+    background: black;
+    color: #fff;
+}
+#Projects {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+nav {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 5px;
+}
+.logo {
+    display: block;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 50px;
+}
+.back-btn {
+    margin-left: 500px;
+    width: 20px;
+}
+.add {
+    width: 30px;
+}
+nav h1 {
+    flex-grow: 1;
+    text-align: left;
+    font-size: 25px;
+    margin-left: 10px;
+}
+.header-txt {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.header-txt p {
+    margin-top: 70px;
+    margin-left: -150px;
+    font-size: 20px;
+    font-weight: 300;
+}
+.header-txt p img {
+    width: 13px;
+    margin-left: 5px;
+}
+/* Grid and project item styling */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+.project-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    align-items: center;
+}
+.project-item p {
+    margin-top: 25px;
+    margin-left: 7px;
+}
+.project-item img {
+    width: 90%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+    margin-left: 10px;
+}
+.project-item:hover img {
+    transform: scale(1.05);
+}
+/* Zoom-out transition */
+.project-item img.zooming {
+    animation: zoomOut 0.6s forwards;
+}
+@keyframes zoomOut {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* Project detail styling */
+.project-detail {
+    display: none;
+    position: absolute;
+    color: #000000;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+.project-detail.active {
+    display: block;
+    opacity: 1;
+    animation: expandCanvas 0.5s ease forwards;
+}
+
+/*calculator code implementation*/
+

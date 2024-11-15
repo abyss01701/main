@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" href="simpleCalc.css">
+</head>
+<body>
+    <nav>
+        <a href="/main/index.html"><img src="/main/images/logo1.png" class="logo"></a>
+            <ul id="sideMenu">
+                <li> <a href="#header"> Home </a></li>
+                <li> <a href="#about"> About </a></li>
+                <li> <a href="#services"> Services </a></li>
+                <li> <a href="#portfolio"> Projects </a></li>
+                <li> <a href="#contact"> Contact </a></li>
+            </ul>
+        </nav>
+
+    <div class="calculator">
+        <div class="content">
+            <input type="text" placeholder="0" id="inputBox">
+            <div>
+                <button class="other-clr">AC</button>
+                <button class="other-clr">DE</button>
+                <button class="main">%</button>
+                <button class="main">/</button>
+            </div>
+
+            <div>
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button class="main">*</button>
+            </div>
+
+            <div>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button class="main">-</button>
+            </div>
+
+            <div>
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button class="main">+</button>
+            </div>
+
+            <div>
+                <button>0</button>
+                <button>.</button>
+                <button class="equal">=</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let input = document.getElementById('inputBox');
+        let  buttons = document.querySelectorAll('button');
+
+        let string = "";
+        let arr = Array.from(buttons);
+        arr.forEach(button => {
+            button.addEventListener('click', (e) => {
+                if(e.target.innerHTML =='='){
+                    string = eval(string);
+                    input.value = string;
+                }
+                else if(e.target.innerHTML == 'AC'){
+                    string = "";
+                    input.value = string;
+                }
+
+                else if(e.target.innerHTML == 'DE'){
+                    string = string.substring(0, string.length -1);
+                    input.value = string;
+                }
+                else{
+                    string += e.target.innerHTML;
+                    input.value = string;
+                }
+            })
+        })
+
+    </script>
+</body>
+</html>

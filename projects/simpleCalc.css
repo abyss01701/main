@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    padding: 0%;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+nav{
+    position: fixed; /* Keeps the navbar fixed at the top of the page */
+    top: 0; /* Align it to the top of the page */
+    left: 0; /* Align it to the left side */
+    width: 100%; /* Make it span the entire width of the page */
+    z-index: 10; /* Ensure it stays above other content */
+    background-color: #000; /* Optional: Set a background color for visibility */
+    padding: 10px 0; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.logo{
+    width: 50px;
+    margin-left: 150px;
+    margin-top: 10px;
+    
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    margin-right: 20px;
+}
+nav ul li a::after{
+    content:'';
+    width: 0%;
+    height: 3px;
+    background: #0586e3;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+.calculator{
+    margin-top: 50px;
+    height: 100vh;
+    width: 100%;
+    background: #0078f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content{
+    background: #17181a;
+    padding: 26px;
+    border-radius: 20px;
+    box-shadow: 0px 80px 50px -30px rgba(41, 168, 255, 0.2);    
+}
+input{
+    width: 330px;
+    padding: 25px;
+    margin: 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 45px;
+    text-align: right;
+    color: #fff;
+}
+input::placeholder{
+    color: #fff;
+}
+button{
+    border: none;
+    outline: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background: #303136;
+    font-size: 21px;
+    font-weight: 600;
+    color: #29a8ff;
+    margin: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+button:hover{
+    background: orange;
+    color: black
+}
+.equal{
+    width: 144px;
+    color: #fff;
+    background: #1991ff;
+    font-weight: 700;
+}
+.other-clr{
+    background: #616161;
+    color: #a5a5a5;
+    font-weight: 400px
+}
+.main{
+    background: #339dff;
+    color: #c1bfbf;
+}

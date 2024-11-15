@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> E-Portfolio Website </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+            <a href="#header"><img src="images/logo1.png" class="logo"></a>
+                <ul id="sideMenu">
+                    <li> <a href="#header"> Home </a></li>
+                    <li> <a href="#about"> About </a></li>
+                    <li> <a href="#services"> Services </a></li>
+                    <li> <a href="#portfolio"> Projects </a></li>
+                    <li> <a href="#contact"> Contact </a></li>
+                    <img src="images/close.png" onclick="closeMenu()" class="close" >
+                </ul>
+                <img src="images/menu.png" onclick="openMenu()" class="menu">
+            </nav>
+            <div class="header-text">
+                <p> Dynamic Software Engineer </p>
+                <h1>Hi, I'm <span>Akshat Newal </span><br> From Fiji</h1>
+            </div>
+        </div>
+    </div>
+    <!-- About Section-->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/final.png">
+                </div>
+
+                <div class="about-col-2">
+                    <h1 class="sub-title"> About Me</h1>
+                    <p>Hello! I'm a passionate Computer Science & Psychology student with a broad skill set in technology and design.
+                        I have hands-on experience in graphic design, web development, and VMware, as well as proficiency in multiple programming
+                        languages like C++, Java, HTML, CSS, JavaScript, and Python. I’m also skilled in Unit Testing, Linux and networking within Cisco 
+                        environments. I love building efficient,
+                        visually engaging solutions and am excited to keep growing as a developer.</p>
+
+                        <div class="tab-titles">
+                            <p class = 'tab-links active-link' onclick="opentab('education')"> Education </p>
+                            <p class = 'tab-links' onclick="opentab('skills')" > Skills </p>
+                            <p class = 'tab-links' onclick="opentab('experience')"> Experience </p>
+                        </div>
+
+                        <!--- TAB CONTENT HIDDEN (Education)-->
+                        <div class="tab-content active-tab" id="education">
+                            <ul>
+                                <li> <span> University of the South Pacific</span> <br> Bachelor of Arts: Computer Science & Psychology</li>
+                            </ul>
+                        </div>
+
+                        <!--- TAB CONTENT HIDDEN (Skills)-->
+                        <div class="tab-content" id="skills">
+                            <ul>
+                                <li> <span> Full stack Website Development </span> <br> Bachelor of Arts: Computer Science & Psychology</li>
+                                <li> <span> Networking in Cisco Environments </span> <br> Use of packet tracer to configure VLANs, Trunking, Port Security, Implementing ACLs</li>
+                                <li> <span> Coding </span> <br> C++. Java, JavaScript, HTML, CSS, Python</li>
+                                <li> <span> Graphic Design </span> <br> Adobe Photoshop, Premiere Pro, Blender </li>
+                            </ul>
+                        </div>
+
+                        <!--- TAB CONTENT HIDDEN (Experience)-->
+                        <div class="tab-content" id="experience">
+                            <ul>
+                                <li> <span> Jan 2021 -  October 2023 </span> <br> Freelance Graphic Designer</li>
+                                <li> <span> Jan 2024 - December 31 </span> <br> IT Intern at University of the South Pacific (GSB)</li>
+                            </ul>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------Services section-------->
+    <div id="services">
+        <div class="container">
+            <h1 class="subt-title"> My Services </h1>
+                <div class="services-list">
+                    <div> 
+                        <img src="images/code.png" class="code-logo">
+                        <h2> Website Development </h2>
+                        <p> Full stack development, i can build your dreams</p>
+                        <a href="#"> Learn more</a>
+                    </div>
+
+                    <div> 
+                        <img src="images/ux.png" class="g-design">
+                        <h2> Graphic Design </h2>
+                        <p>Show me your marketing and i will show you the money </p>
+                        <a href="#"> Learn more</a>
+                    </div>
+
+                    <div> 
+                        <img src="images/exploration.png" class="d-analysis">
+                        <h2> Data Analysis </h2>
+                        <p>Can analyse your data and provide business solutions</p>
+                        <a href="#"> Learn more</a>
+                    </div>
+
+                    <div> 
+                        <img src="images/project-management.png" class="project-management">
+                        <h2> Project Development  </h2>
+                        <p> Main focus is software quality assurance and testing to improve your product based on your specific business needs</p>
+                        <a href="#"> Learn more</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <!-------Projects ------->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title"> Projects </h1>
+               <div class="work-list">
+                    <div class="work">
+                        <img src="images/web-dev.jpg">
+                    
+                            <div class="layer">
+                                <h3> Full stack development</h3>
+                                <p>This contains all projects that includes frontend & backend development</p>
+                                <a href="projects/Webdev.html" class="transition-link"><img src="images/external-link.png"></a>
+                            </div>
+                    </div>
+
+                    <div class="work">
+                        <img src="images/gdesign.jpg">
+                            <div class="layer">
+                                <h3> Graphic Design</h3>
+                                <p>This contains all photomanipulation and logos</p>
+                                <a href="/main/projects/GraphicDesign.html" class="transition-link"><img src="images/external-link.png"></a>
+                            </div>
+                       
+                    </div>
+
+                    <div class="work">
+                        <img src="images/project-management.png">
+                            <div class="layer">
+                                <h3> Miscallenous Projects</h3>
+                                <p>This contains all projects that have had been developmented to increase my knowledge of systems</p>
+                                <a href="/main/projects/misc.html" class="transition-link"><img src="images/external-link.png"></a>
+                            </div>
+                    </div>
+                </div>
+            <a href="#" class="btn"> See more </a>    
+        </div>
+
+    </div>
+
+    <!------Contact us--------->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title"> <img src="" >Contact Me </h1>
+                    <p> <img src="images/send.png" class="small-icon">  akshataniketnewal@gmail.com</p>
+                    <p> <img src="images/mobile.png" class="small-icon"> +679 9507275</p>
+
+                    <div class="social-icons">
+                      <a href="https://www.facebook.com/XxAni10NxX/"><img src="images/facebook.png" class="small-icons2"></a>
+                      <a href="https://www.instagram.com/incarcerated_abyss/"><img src="images/instagram.png"  class="small-icons2"></a>
+                      <a href="https://x.com/incarcerated_ab"><img src="images/twitter.png"  class="small-icons2"></a>
+                      <a href="https://www.linkedin.com/in/akshat-newal-700021268/"><img src="images/linkedin.png"  class="small-icons2"></a>
+                    </div>
+                    <a href="files/Resume ~Akshat.pdf" download class="Download-btn"> Download Resume</a>
+                    <a href="files/Academic transcript.pdf"download class="Download-btn"> Download Transcript</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                       <button type="submit" class="Download-btn btn2"> Submit </button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+           
+        </div>
+        <div class="copyright">
+            <p> Copyright © Akshat Newal. All rights reserved</p>
+        </div>
+    </div>
+
+    <script>
+       //About Me (skills,experience & eduxation)
+       // Hide/show content function
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-content");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+
+    <script>
+        var sidemenu = document.getElementById("sideMenu");
+
+        function openMenu(){
+            sidemenu.style.right = "0";
+        }
+        function closeMenu(){
+            sidemenu.style.right = "-200px";
+        }
+    </script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwrGyNP8HnwMkaESmJWAc6WsucTc1DnunM32GixgbOMqCCsqOOTkqz3sSKYCOQ5Cwko/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg");
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },4000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+  
+</body>
+</html>

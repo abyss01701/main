@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--  *****   Link To Custom CSS Style Sheet   *****  -->
+	<link rel="stylesheet" type="text/css" href="GraphicDesign.css">
+
+	<!--  *****   Link To Font Awsome Icons   *****  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Portfolio</title>
+</head>
+<body>
+
+<section class="portfolio">
+	
+	<header class="section-head">
+        <a href="/main/index.html"> <img src="/main/images/logo1.png" class="logo"></a>
+		<h1> Design Gallery</h1>
+	</header>
+
+	<main class="mainContainer">
+		
+		<!--  *****  Buttons Section Starts  *****  -->
+		<div class="button-group">
+			<button class="button active" data-filter="*">All</button>
+			<button class="button" data-filter=".design">Design</button>
+		<button class="button" data-filter=".development">Development</button>
+			<button class="button" data-filter=".logo">Logo</button>
+		</div>
+		<!--  *****  Buttons Section Ends  *****  -->
+
+		<!--  *****  Gallery Section Starts  *****  -->
+		<div class="gallery">
+			
+			<!--  *****  Card 1 Starts  *****  -->
+			<div class="item development">
+				<img src="/main/images/2.gif">
+				<div class="overlay">
+					<a href="#">VIEW MORE</a>
+				</div>
+			</div>
+			<!--  *****  Card 1 Ends  *****  -->
+
+			<!--  *****  Card 2 Starts  *****  -->
+			<div class="item development">
+				<img src="/main/images/2.gif">
+				<div class="overlay">
+					<a href="#">VIEW MORE</a>
+				</div>
+			</div>
+			<!--  *****  Card 2 Ends  *****  -->
+
+			<!--  *****  Card 3 Starts  *****  -->
+			<div class="item development">
+				<img src="/main/images/2.gif">
+				<div class="overlay">
+					<a href="#">VIEW MORE</a>
+				</div>
+			</div>
+			<!--  *****  Card 3 Ends  *****  -->
+
+            	<!--  *****  Card 4 Starts  *****  -->
+			<div class="item design">
+				<img src="/main/images/3.jpg">
+				<div class="overlay">
+					<a href="#">VIEW MORE</a>
+				</div>
+			</div>
+			<!--  *****  Card 4 Ends  *****  -->
+
+            	<!--  *****  Card 5 Starts  *****  -->
+			<div class="item development">
+				<img src="/main/images/`0.gif">
+				<div class="overlay">
+					<a href="#">VIEW MORE</a>
+				</div>
+			</div>
+			<!--  *****  Card 5 Ends  *****  -->
+
+            	<!--  *****  Card 6 Starts  *****  -->
+			<div class="item design">
+				<img src="/main/images/background.png">
+				<div class="overlay">
+					<a href="#">VIEW MORE</a>
+				</div>
+			</div>
+			<!--  *****  Card 6 Ends  *****  -->
+              
+            	<!--  *****  Card 7 Starts  *****  -->
+			<div class="item design">
+				<img src="/main/images/6.jpg">
+				<div class="overlay">
+					<a href="#">VIEW MORE</a>
+				</div>
+			</div>
+			<!--  *****  Card 7 Ends  *****  -->
+
+            	<!--  *****  Card 8 Starts  *****  -->
+			<div class="item development">
+				<img src="/main/images/9.jpg">
+				<div class="overlay">
+					<a href="#">VIEW MORE</a>
+				</div>
+			</div>
+			<!--  *****  Card 8 Ends  *****  -->
+
+            <!--  *****  Card 9 Starts  *****  -->
+			<div class="item design">
+				<img src="/main/images/background2.jpg">
+				<div class="overlay">
+					<a href="#">VIEW MORE</a>
+				</div>
+			</div>
+			<!--  *****  Card 9 Ends  *****  -->
+
+                 <!--  *****  Card 10 Starts  *****  -->
+			<div class="item design">
+				<img src="/main/images/11.jpg">
+				<div class="overlay">
+					<a href="#">VIEW MORE</a>
+				</div>
+			</div>
+			<!--  *****  Card 10 Ends  *****  -->
+
+                 <!--  *****  Card 11 Starts  *****  -->
+			<div class="item development">
+				<img src="/main/images/8.gif">
+				<div class="overlay">
+					<a href="#">VIEW MORE</a>
+				</div>
+			</div>
+			<!--  *****  Card 11 Ends  *****  -->
+
+			 <!--  *****  Card 12 Starts  *****  -->
+			 <div class="item logo">
+				<img src="/main/images/ABYSS-2.png">
+				<div class="overlay">
+					<a href="#">VIEW MORE</a>
+				</div>
+			</div>
+			<!--  *****  Card 12 Ends  *****  -->
+
+			 <!--  *****  Card 13 Starts  *****  -->
+			 <div class="item logo">
+				<img src="/main/images/Abyss-logo-3.png">
+				<div class="overlay">
+					<a href="#">VIEW MORE</a>
+				</div>
+			</div>
+			<!--  *****  Card 13 Ends  *****  -->
+
+			 <!--  *****  Card 14 Starts  *****  -->
+			 <div class="item logo">
+				<img src="/main/images/logo1.png">
+				<div class="overlay">
+					<a href="#">VIEW MORE</a>
+				</div>
+			</div>
+			<!--  *****  Card 14 Ends  *****  -->
+
+		</div>
+		<!--  *****  Gallery Section Ends  *****  -->
+
+	</main>
+
+</section>
+
+
+<!--   *****   JQuery Link   *****   -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<!--   *****   Isotope Filter Link   *****  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+
+<script type="text/javascript">
+	var $galleryContainer = $('.gallery').isotope({
+		itemSelector: '.item',
+  		layoutMode: 'fitRows'
+	})
+
+	$('.button-group .button').on('click', function(){
+		$('.button-group .button').removeClass('active');
+		$(this).addClass('active');
+
+		var value = $(this).attr('data-filter');
+		$galleryContainer.isotope({
+			filter: value 
+		})
+	})
+</script>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal ePortfolio Details</title>
+    <link rel="stylesheet" href="/main/style.css">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+            <a href="/main/index.html"><img src="/main/images/logo1.png" class="logo"></a>
+                <ul id="sideMenu">
+                    <li> <a href="#header"> Home </a></li>
+                    <li> <a href="#about"> About </a></li>
+                    <li> <a href="#services"> Services </a></li>
+                    <li> <a href="#portfolio"> Projects </a></li>
+                    <li> <a href="#contact"> Contact </a></li>
+                    <img src="images/close.png"class="close" >
+                </ul>
+                <img src="images/menu.png" class="menu">
+            </nav>
+
+            <!-----Slider ----->
+            <div class="carousel ">
+               <div class="list">
+                <div class="item">
+                    <img src="/main/images/background1.png" class="img-fit">
+                    <div class="content">
+                        <div class="author"> Akshat Newal</div>
+                        <div class="title">ePortfolio Website</div>
+                        <div class="topic blue"> Front-end</div>
+                        <div class="des">
+                            Html, CSS, JavaScript & Node.js was used for development <br> Development time - 12-48 hrs
+                        </div>
+                        <div class="buttons">
+                            <button onclick="goback()"> GO BACK</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="/main/images/background1-red.png">
+                    <div class="content">
+                        <div class="author"> Akshat Newal</div>
+                        <div class="title">ePortfolio Website </div>
+                        <div class="topic red"> Back-end</div>
+                        <div class="des"> The backend was developed using SharePoint, Git <br> and SQL </div>
+
+                        <div class="buttons">
+                            <button onclick="goback()"> GO BACK</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="/main/images/background1-green.png">
+                    <div class="content">
+                        <div class="author"> Akshat Newal</div>
+                        <div class="title">ePortfolio Website </div>
+                        <div class="topic green"> Source code</div>
+                        <div class="des">
+                            To view the source, click the link <br> below
+                        </div>
+                        <div class="buttons">
+                            <button onclick=""> WEBSITE</button>
+                            <button onclick="goSource()"> SOURCE CODE </button>
+                        </div>
+                    </div>
+                </div>
+
+               </div>
+               <!-------thumbnails-->
+               <div class="thumbnail">
+                <div class="item">
+                    <img src="/main/images/sp.jpg">
+                    <div class="content">
+                        <div class="title">
+                            Front-end
+                        </div>
+                        <div class="des">
+                            let it rip
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="/main/images/sp-red.png">
+                    <div class="content">
+                        <div class="title">
+                            Back-end
+                        </div>
+                        <div class="des">
+                            Description
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="/main/images/sp-green.png">
+                    <div class="content">
+                        <div class="title">
+                            Learn More
+                        </div>
+                        <div class="des">
+                            Description
+                        </div>
+                    </div>
+                </div>
+
+               </div>
+               <!----arrows -->
+               <div class="arrows">
+                    <button id="prev"><</button>
+                    <button id="next">></button>
+               </div>
+               <div class="time"></div>
+            </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>

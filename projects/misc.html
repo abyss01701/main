@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Projects</title>
+    <link rel="stylesheet" href="Webdev.css">
+</head>
+<body>
+    <div id="Projects">
+        <div class="container">
+            <nav>   
+                <a href="/main/index.html"><img src="/main/images/logo1.png" class="logo"></a>
+                <a href="/main/index.html"><img src="/main/images/left-arrow.png" class="back-btn"> </a>
+                <h1> Miscellaneous Projects</h1>
+                <a href="#"><img src="/main/images/add.png" class="add"></a>
+            </nav>
+            <div class="grid-container">
+                <div class="project-item new" onclick="zoomTransition(this, 'simpleCalc.html')">
+                    <img src="/main/images/calc.jpg"> 
+                    <p>Simple Calculator Using Python</p>
+                </div>
+                <div class="project-item new" onclick="zoomTransition(this)">
+                    <img src="/main/images/junit.jpg"> 
+                    <p>junit Testing</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function zoomTransition(element, targetUrl) {
+            const img = element.querySelector("img");
+            const rect = img.getBoundingClientRect();
+
+            // Save the position and image details to Local Storage
+            localStorage.setItem("transitionData", JSON.stringify({
+                src: img.src,
+                top: rect.top,
+                left: rect.left,
+                width: rect.width,
+                height: rect.height
+            }));
+
+            // Trigger the zoom-out effect
+            img.classList.add("zooming");
+
+            // Redirect to the target page after the animation finishes
+            setTimeout(() => {
+                window.location.href = targetUrl;
+            }, 600); // Match the timeout to the duration of the CSS animation
+        }
+    </script>
+</body>
+</html>
