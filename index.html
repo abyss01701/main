@@ -24,7 +24,7 @@
             </nav>
             <div class="header-text">
                 <p> Dynamic Software Engineer </p>
-                <h1>Hi, I'm <span>Akshat Newal </span><br> From Fiji</h1>
+                <h1> Hi, I'm <span class="auto-input"> </span> </h1>
             </div>
         </div>
     </div>
@@ -60,9 +60,10 @@
                         <!--- TAB CONTENT HIDDEN (Skills)-->
                         <div class="tab-content" id="skills">
                             <ul>
-                                <li> <span> Full stack Website Development </span> <br> Bachelor of Arts: Computer Science & Psychology</li>
+                                <li> <span> Full stack Website Development </span> <br> Creating compelling front end and backend systems</li>
                                 <li> <span> Networking in Cisco Environments </span> <br> Use of packet tracer to configure VLANs, Trunking, Port Security, Implementing ACLs</li>
                                 <li> <span> Coding </span> <br> C++. Java, JavaScript, HTML, CSS, Python</li>
+                                <li> <span> Machine Learning </span> <br> Building innovative business models  </li>
                                 <li> <span> Graphic Design </span> <br> Adobe Photoshop, Premiere Pro, Blender </li>
                             </ul>
                         </div>
@@ -235,6 +236,18 @@
         .catch(error => console.error('Error!', error.message))
     })
   </script>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+    
+    var typed = new Typed(".auto-input",{
+
+        strings: ['Akshat Newal <br> <span class="name"> From Fiji </span>', 'Akshat Newal <br> <span class="name"> From Fiji </span>'], 
+        typeSpeed:55,
+        loop:false
+    })
+
+</script>
   
 </body>
 </html>

@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 html{
-    scroll-behavior: smooth;
+    scroll-behavior:smooth
 }
 body {
     background: #000000;
@@ -82,9 +82,13 @@ nav ul li a:hover::after{
 .header-text h1{
     font-size: 60px;
     margin-top: 20px;
+    color: white; 
 }
 .header-text h1 span{
     color: rgb(8, 190, 235);
+}
+.header-text h1 .name {
+    color: rgb(250, 254, 255); /* Cyan color for Akshat Newal */
 }
 .menu{
     display: none;

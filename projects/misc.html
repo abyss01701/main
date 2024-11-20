@@ -13,9 +13,9 @@
                 <a href="/main/index.html"><img src="/main/images/logo1.png" class="logo"></a>
                 <a href="/main/index.html"><img src="/main/images/left-arrow.png" class="back-btn"> </a>
                 <h1> Miscellaneous Projects</h1>
-                <a href="#"><img src="/main/images/add.png" class="add"></a>
+                  <a href="#" id="add-project" class="admin-btn"><img src="/main/images/add.png" class="add"></a>
             </nav>
-            <div class="grid-container">
+            <section id="projects"  class="grid-container">
                 <div class="project-item new" onclick="zoomTransition(this, 'simpleCalc.html')">
                     <img src="/main/images/calc.jpg"> 
                     <p>Simple Calculator Using Python</p>
@@ -24,7 +24,7 @@
                     <img src="/main/images/junit.jpg"> 
                     <p>junit Testing</p>
                 </div>
-            </div>
+            </section>
         </div>
     </div>
     <script>
@@ -50,5 +50,144 @@
             }, 600); // Match the timeout to the duration of the CSS animation
         }
     </script>
+
+   <!-- Modal for Adding Projects -->
+<div id="project-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" id="close-project-modal">&times;</span>
+        <h2>Add a New Project</h2>
+        <form id="project-form">
+            <label for="project-name">Project Name:</label>
+            <input type="text" id="project-name" name="project-name" required>
+
+            <label for="project-image">Choose Image:</label>
+            <input type="file" id="project-image" name="project-image" accept="image/*" required>
+
+             <select name="category" id="category">
+                <option value="Web-development"> Web-development</option>
+                <option value="Miscellenous"> Miscallenous</option>
+             </select>
+             
+            <button type="submit">Add Project</button>
+        </form>
+    </div>
+</div>
+
+<!-- Grid to Display Projects -->
+<div id="projects" class="project-grid"></div>
+
+<script>
+// Get elements for the project modal
+const projectModal = document.getElementById('project-modal');
+const projectButton = document.getElementById('add-project');
+const closeProjectModal = document.getElementById('close-project-modal');
+
+// Open the project modal
+projectButton?.addEventListener('click', (e) => {
+    e.preventDefault();
+    projectModal.style.display = 'block';
+});
+
+// Close the project modal
+closeProjectModal.addEventListener('click', () => {
+    projectModal.style.display = 'none';
+});
+
+// Close the modal when clicking outside it
+window.addEventListener('click', (e) => {
+    if (e.target === projectModal) {
+        projectModal.style.display = 'none';
+    }
+});
+
+// Handle the project form submission
+const projectForm = document.getElementById('project-form');
+const projectNameInput = document.getElementById('project-name');
+const projectImageInput = document.getElementById('project-image');
+const projectCategoryInput = document.getElementById('category');
+
+projectForm.addEventListener('submit', async (e) => {
+    e.preventDefault(); // Prevent form from refreshing the page
+
+    // Get form values
+    const projectName = projectNameInput.value.trim();
+    const file = projectImageInput.files[0];
+
+    if (projectName && file) {
+        const formData = new FormData();
+        formData.append('title', projectName);
+        formData.append('image', file);
+
+        try {
+            // Send data to the backend
+            const response = await fetch('http://localhost:5000/misc', {
+                method: 'POST',
+                body: formData,
+            });
+
+            if (response.ok) {
+                const project = await response.json(); // Response from the backend
+
+                // Add project to UI dynamically
+                const newProject = document.createElement('div');
+                newProject.className = 'project-item';
+
+                newProject.innerHTML = `
+                    <img src="http://localhost:5000/uploads/${project.project.image}" alt="${project.project.title}">
+                    <p>${project.project.title}</p>
+                `;
+
+                // Add the new project to the grid
+                document.querySelector('#projects').appendChild(newProject);
+
+                // Clear the input fields and close the modal
+                projectNameInput.value = '';
+                projectImageInput.value = '';
+                projectModal.style.display = 'none';
+            } else {
+                alert('Error saving project. Please try again.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred while saving the project.');
+        }
+    } else {
+        alert('Please provide both a project name and an image.');
+    }
+});
+
+// Function to load projects from the backend
+async function loadProjects() {
+    try {
+        const response = await fetch('http://localhost:5000/misc');
+        if (response.ok) {
+            const projects = await response.json();
+
+            // Add each project to the grid
+            projects.forEach((project) => {
+                const projectItem = document.createElement('div');
+                projectItem.className = 'project-item';
+
+                projectItem.innerHTML = `
+                    <img src="http://localhost:5000/uploads/${project.image}" alt="${project.title}">
+                    <p>${project.title}</p>
+                `;
+
+                document.querySelector('#projects').appendChild(projectItem);
+            });
+        } else {
+            console.error('Failed to load projects');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+// Load projects when the page loads
+window.addEventListener('DOMContentLoaded', loadProjects);
+
+</script>
+
+
 </body>
 </html>
