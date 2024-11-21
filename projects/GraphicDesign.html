@@ -33,7 +33,7 @@
 		<!--  *****  Buttons Section Ends  *****  -->
 
 		<!--  *****  Gallery Section Starts  *****  -->
-		<div class="gallery">
+		<div id="gallery" class="gallery">
 			
 			<!--  *****  Card 1 Starts  *****  -->
 			<div class="item development">
@@ -210,7 +210,127 @@
 	})
 </script>
 
+
 <script>
+	// Get elements for the project modal
+	const galleryModal = document.getElementById('gallery-modal');
+	const galleryButton = document.getElementById('add-gallery-image');
+	const closeGalleryModal = document.getElementById('close-gallery-modal');
+	
+	// Open the project modal
+	galleryButton?.addEventListener('click', (e) => {
+		e.preventDefault();
+		galleryModal.style.display = 'block';
+	});
+	
+	// Close the project modal
+	closeGalleryModal.addEventListener('click', () => {
+		galleryModal.style.display = 'none';
+	});
+	
+	// Close the modal when clicking outside it
+	window.addEventListener('click', (e) => {
+		if (e.target === galleryModal) {
+			galleryModal.style.display = 'none';
+		}
+	});
+	
+	// Handle the project form submission
+	const galleryForm = document.getElementById('gallery-form');
+	const galleryImageInput = document.getElementById('gallery-image');
+	const galleryCategoryInput = document.getElementById('opt');
+	
+	galleryForm.addEventListener('submit', async (e) => {
+		e.preventDefault(); // Prevent form from refreshing the page
+	
+		// Get form values
+		const file = galleryImageInput.files[0];
+		const imgCategory = galleryCategoryInput.value;
+	
+		if (file && imgCategory) {
+			const formData = new FormData();
+			formData.append('image', file);
+			formData.append('category', imgCategory);
+	
+			try {
+				// Send data to the backend
+				const response = await fetch('http://localhost:5000/gallery', {
+					method: 'POST',
+					body: formData,
+				});
+	
+				if (response.ok) {
+					const project = await response.json(); // Response from the backend
+	
+					// Add images to UI dynamically
+					const newGalleryImg = document.createElement('div');
+					newGalleryImg.className = `item ${imgCategory}`;
+	
+					newGalleryImg.innerHTML = `
+						<img src="http://localhost:5000/uploads/${project.i}" alt="${project.category}">
+						 <div class="overlay">
+                    		<a href="#">VIEW MORE</a>
+                		</div>
+					`;
+	
+					// Add the new project to the grid
+					document.querySelector('#gallery').appendChild(newGalleryImg);
+
+					// Trigger Isotope to re-layout after adding a new item
+					$galleryContainer.isotope('reloadItems').isotope('layout');
+	
+					// Clear the input fields and close the modal
+					galleryImageInput.value = '';
+					galleryModal.style.display = 'none';
+				} else {
+					alert('Error saving project. Please try again.');
+				}
+			} catch (error) {
+				console.error('Error:', error);
+				alert('An error occurred while saving the project.');
+			}
+		} else {
+			alert('Please provide both a project name and an image.');
+		}
+	});
+	
+	// Function to load projects from the backend
+	async function loadProjects() {
+		try {
+			const response = await fetch('http://localhost:5000/gallery');
+			if (response.ok) {
+				const galleryImages = await response.json();
+	
+				// Add each project to the grid
+				galleryImages.forEach((project) => {
+					const galleryItem = document.createElement('div');
+					galleryItem.className = `item ${project.category}`;
+	
+					galleryItem.innerHTML = `
+						 <img src="http://localhost:5000/uploads/${project.image}" alt="${project.category}">
+                        <div class="overlay">
+                            <a href="#">VIEW MORE</a>
+                        </div>
+					`;
+	
+					document.querySelector('#gallery').appendChild(galleryItem);
+
+						// Trigger Isotope to re-layout after adding a new item
+						$galleryContainer.isotope('reloadItems').isotope('layout');
+				});
+			} else {
+				console.error('Failed to load projects');
+			}
+		} catch (error) {
+			console.error('Error:', error);
+		}
+	}
+	
+	// Load projects when the page loads
+	window.addEventListener('DOMContentLoaded', loadProjects);
+	
+	</script>
+<!-- <script>
     // Get elements for the gallery modal
     const galleryModal = document.getElementById('gallery-modal');
     const galleryButton = document.getElementById('add-gallery-image');
@@ -301,7 +421,34 @@
     }
 });
 
+// Function to load projects from the backend
+async function loadGallery() {
+    try {
+        const response = await fetch('http://localhost:5000/gallery');
+        if (response.ok) {
+            const gallerys = await response.json();
+
+            // Add each project to the grid
+           gallerys.forEach((gallery) => {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item';
+
+                galleryItem.innerHTML = `
+                        <img src="${gallery.imageUrl}" alt="New Gallery Image">
+                        <div class="overlay">
+                            <a href="#">VIEW MORE</a>
+                        </div>
+                    `;
+                document.querySelector('.gallery').appendChild(galleryItem);
+            });
+        } else {
+            console.error('Failed to load projects');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
    
-    </script>
+    </script> -->
 </body>
 </html>
