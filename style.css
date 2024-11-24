@@ -404,7 +404,7 @@ form input, form textarea{
         position: absolute; /* Keeps the navbar fixed at the top of the page */
     }
     nav ul {
-        background-color: rgb(7, 106, 246);
+        background-color: rgb(0, 0, 0);
         position: fixed;
         top: 0;
         right: -200px;
@@ -434,6 +434,13 @@ form input, form textarea{
     .tab-links{
         font-size:16px; 
         margin-right: 20px;
+    }
+    .layer h3{
+        font-weight: 500;
+        margin-bottom: 5px;
+    }
+    .layer p{
+        font-size: 10px;
     }
     /*Contact me sectin*/
     .contact-left, .contact-right{
