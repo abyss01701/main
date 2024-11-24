@@ -126,12 +126,6 @@
     }
   }
   
-  @media(max-width: 600px){
-    div.gallery .item{
-      width: 100%;
-      margin: 4px 0px;
-    }
-  }
   /* Modal Styles */
   .modal {
     display: none; /* Hidden by default */
@@ -165,4 +159,42 @@
 #gallery-form{
     line-height: 50px;
     display:grid;
+}
+
+@media(max-width: 600px){
+  div.gallery .item{
+    width: 100%;
+    margin: 4px 0px;
+  }
+  .modal {
+    margin-top: 100px;
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;  
+}
+.modal-content {
+    background-color: #010101;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 20px;
+}
+.section-head{
+  height: 130px;
+}
+.button-group button{
+  align-items: center;
+}
+.section-head h1{
+  font-size: 60px;
+  margin-left: 35px;
+}
+.logo{
+  margin-left: 50px;
+}
 }

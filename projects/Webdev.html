@@ -14,8 +14,8 @@
                 <a href="/main/index.html"><img src="/main/images/left-arrow.png" class="back-btn"> </a>
                 <h1> Web Development Projects</h1>
                 <a href="#" id="add-project" class="admin-btn"><img src="/main/images/add.png" class="add"></a>
-                <img src="/main/images/menu.png" onclick="openMenu()" class="menu">
             </nav>
+            
             <!-----Adding projects panel(in process of automation)-->
             <section id="projects" class="grid-container">    
                 <div class="project-item" onclick="zoomTransition(this, 'ePortfolioDetails.html')">
@@ -63,7 +63,7 @@
             <input type="text" id="project-name" name="project-name" required>
 
             <label for="project-image">Choose Image:</label>
-            <input type="file" id="project-image" name="project-image" accept="image/*" required>
+            <input type="file" id="project-image"name="project-image" accept="image/*" required>
 
              <select name="category" id="category">
                 <option value="Web-development"> Web-development</option>
@@ -74,6 +74,9 @@
         </form>
     </div>
 </div>
+
+<!-- Grid to Display Projects -->
+<div id="projects" class="project-grid"></div>
 
 <script>
 // Get elements for the project modal

@@ -47,3 +47,11 @@ function showSlider(type){
         next.click();
     }, timeAutoNext)
 }
+
+//goback
+function goback(){
+    window.history.back();
+}
+function goSource(){
+    window.location.href = "https://github.com/abyss01701/main";
+}

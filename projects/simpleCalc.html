@@ -9,14 +9,10 @@
 <body>
     <nav>
         <a href="/main/index.html"><img src="/main/images/logo1.png" class="logo"></a>
-            <ul id="sideMenu">
-                <li> <a href="#header"> Home </a></li>
-                <li> <a href="#about"> About </a></li>
-                <li> <a href="#services"> Services </a></li>
-                <li> <a href="#portfolio"> Projects </a></li>
-                <li> <a href="#contact"> Contact </a></li>
-            </ul>
-        </nav>
+        <img src="/main/images/left-arrow.png" class="back-btn" onclick="goBack()"> 
+        <h1> Simple Calculator</h1>
+       
+    </nav>
 
     <div class="calculator">
         <div class="content">
@@ -58,6 +54,13 @@
     </div>
 
     <script>
+        function goBack(){
+            window.history.back();
+        }
+    </script>
+
+    <script>
+        
         let input = document.getElementById('inputBox');
         let  buttons = document.querySelectorAll('button');
 
