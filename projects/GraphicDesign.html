@@ -192,6 +192,7 @@
 
 <!--   *****   Isotope Filter Link   *****  -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js"></script>
 
 <script type="text/javascript">
 	var $galleryContainer = $('.gallery').isotope({
@@ -210,6 +211,27 @@
 	})
 </script>
 
+  <!-- Custom Scripts -->
+  <script type="text/javascript">
+	// Initialize Isotope after images are loaded
+	var $galleryContainer = $('.gallery');
+
+	$galleryContainer.imagesLoaded(function () {
+		$galleryContainer.isotope({
+			itemSelector: '.item',
+			layoutMode: 'fitRows'
+		}).addClass('isotope-ready');
+	});
+
+	// Filter buttons
+	$('.button-group .button').on('click', function () {
+		$('.button-group .button').removeClass('active');
+		$(this).addClass('active');
+
+		var value = $(this).attr('data-filter');
+		$galleryContainer.isotope({ filter: value });
+	});
+</script>
 
 <script>
 	// Get elements for the project modal
@@ -312,9 +334,7 @@
                             <a href="#">VIEW MORE</a>
                         </div>
 					`;
-	
-					document.querySelector('#gallery').appendChild(galleryItem);
-
+						$galleryContainer.append(galleryItem);
 						// Trigger Isotope to re-layout after adding a new item
 						$galleryContainer.isotope('reloadItems').isotope('layout');
 				});
@@ -330,125 +350,5 @@
 	window.addEventListener('DOMContentLoaded', loadProjects);
 	
 	</script>
-<!-- <script>
-    // Get elements for the gallery modal
-    const galleryModal = document.getElementById('gallery-modal');
-    const galleryButton = document.getElementById('add-gallery-image');
-    const closeGalleryModal = document.getElementById('close-gallery-modal');
-    const galleryCategoryInput = document.getElementById('opt');
-    const galleryForm = document.getElementById('gallery-form');
-    const galleryInput = document.getElementById('gallery-image');
-    
-    // Open the gallery modal
-    galleryButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        galleryModal.style.display = 'block';
-    });
-    
-    // Close the gallery modal
-    closeGalleryModal.addEventListener('click', () => {
-        galleryModal.style.display = 'none';
-    });
-    
-    // Close the modal when clicking outside it
-    window.addEventListener('click', (e) => {
-        if (e.target === galleryModal) {
-            galleryModal.style.display = 'none';
-        }
-    });
-    
-    galleryForm.addEventListener('submit', async (e) => {
-    e.preventDefault(); // Prevent form from refreshing the page
-
-    // Get the uploaded file and category
-    const file = galleryInput.files[0];
-    const category = galleryCategoryInput.value;
-
-    if (file && category) {
-        const formData = new FormData();
-        formData.append('image', file);
-        formData.append('category', category);
-
-        try {
-            // Send data to the backend
-            const response = await fetch('http://localhost:5000/gallery', {
-                method: 'POST',
-                body: formData,
-            });
-
-            if (response.ok) {
-                const project = await response.json(); // Response from the backend
-
-                // Log the response to see if it contains the correct image URL
-                console.log(project);
-
-                // Check if the response contains the image URL
-                if (project && project.imageUrl) {
-                    // Create a new gallery item
-                    const newItem = document.createElement('div');
-                    newItem.className = `item ${category.toLowerCase()}`; // Add category as a class
-                    newItem.innerHTML = `
-                        <img src="${project.imageUrl}" alt="New Gallery Image">
-                        <div class="overlay">
-                            <a href="#">VIEW MORE</a>
-                        </div>
-                    `;
-
-                    // Add the new item to the gallery
-                    const galleryContainer = document.querySelector('.gallery');
-                    galleryContainer.appendChild(newItem);
-
-                    // Refresh Isotope to include the new item
-                    if (window.$galleryContainer) {
-                        $galleryContainer.isotope('appended', newItem);
-                    }
-
-                    // Clear the input and close the modal
-                    galleryInput.value = '';
-                    galleryModal.style.display = 'none';
-                } else {
-                    alert('Error: Image URL not returned from the server.');
-                }
-            } else {
-                alert('Error saving project. Please try again.');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            alert('An error occurred while saving the project.');
-        }
-    } else {
-        alert('Please provide both a project name and an image.');
-    }
-});
-
-// Function to load projects from the backend
-async function loadGallery() {
-    try {
-        const response = await fetch('http://localhost:5000/gallery');
-        if (response.ok) {
-            const gallerys = await response.json();
-
-            // Add each project to the grid
-           gallerys.forEach((gallery) => {
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'gallery-item';
-
-                galleryItem.innerHTML = `
-                        <img src="${gallery.imageUrl}" alt="New Gallery Image">
-                        <div class="overlay">
-                            <a href="#">VIEW MORE</a>
-                        </div>
-                    `;
-                document.querySelector('.gallery').appendChild(galleryItem);
-            });
-        } else {
-            console.error('Failed to load projects');
-        }
-    } catch (error) {
-        console.error('Error:', error);
-    }
-}
-   
-    </script> -->
 </body>
 </html>
