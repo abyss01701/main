@@ -55,3 +55,38 @@ function goback(){
 function goSource(){
     window.location.href = "https://github.com/abyss01701/main";
 }
+var sidemenu = document.getElementById("sideMenu");
+
+function openMenu(){
+    sidemenu.style.right = "0";
+}
+function closeMenu(){
+    sidemenu.style.right = "-200px";
+}
+
+//admin btn
+async function checkAdminStatus() {
+    try {
+        const response = await fetch('http://localhost:5000/check-admin', {
+            method: 'GET',
+            credentials: 'include' // Include cookies for session
+        });
+        
+        if (response.ok) {
+            const data = await response.json();
+            if (data.isAdmin) {
+                document.getElementById('add-project').style.display = 'block';
+            }
+        } else {
+            console.error('Failed to check admin status');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+// Call this function after the DOM content is loaded
+window.addEventListener('DOMContentLoaded', () => {
+    loadProjects(); // Load existing projects
+    checkAdminStatus(); // Check if the user is an admin
+});
