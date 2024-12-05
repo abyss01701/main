@@ -28,9 +28,9 @@
                 <div class="item">
                     <!---blue---->
                     <picture>
-                        <source srcset="/main/images/sp.jpg" media="(max-width: 768px)">
-                        <source srcset="/main/images/background1.png" media="(min-width: 769px)">
-                        <img src="/main/images/background1.png" class="img-fit">
+                        <source srcset="/main/images/eyr.gif" media="(max-width: 768px)">
+                        <source srcset="/main/images/eyr.gif" media="(min-width: 769px)">
+                        <img src="/main/images/eyr.gif" class="img-fit">
                     </picture>   
 
                     <div class="content">
@@ -60,7 +60,7 @@
                         <div class="des"> The backend was developed using Node.js, Git <br> and MongoDB </div>
 
                         <div class="buttons">
-                            <button onclick="goback()"> GO BACK</button>
+                            <button onclick="goback2nd()"> GO BACK</button>
                         </div>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                             To view the source code, click the link <br> below
                         </div>
                         <div class="buttons">
-                            <button onclick="goSource()" class="buttons-cc"> SOURCE CODE </button>
+                            <button onclick="goSource2nd()" class="buttons-cc"> SOURCE CODE </button>
                         </div>
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                <!-------thumbnails-->
                <div class="thumbnail">
                 <div class="item">
-                    <img src="/main/images/sp.jpg">
+                    <img src="/main/images/eyr.gif">
                     <div class="content">
                         <div class="title">
                             Front-end
@@ -134,6 +134,14 @@
             </div>
 
     <script src="Animation.js"></script>
-
+    <script>
+        function goback2nd(){
+            window.history.back();
+    }
+        function goSource2nd(){
+            window.location.href = "https://github.com/abyss01701/wesbiteTemplate";
+    }
+    </script>    
+    
 </body>
 </html>

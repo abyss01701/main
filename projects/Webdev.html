@@ -13,7 +13,7 @@
                 <a href="/main/index.html"><img src="/main/images/logo1.png" class="logo"></a>
                 <a href="/main/index.html"><img src="/main/images/left-arrow.png" class="back-btn"> </a>
                 <h1> Web Development Projects</h1>
-                <a href="#" id="add-project" class="admin-btn"><img src="/main/images/add.png" class="add"></a>
+                <a href="#" id="add-project" class="admin-btn" style="display: none;"><img src="/main/images/add.png" class="add"></a>
             </nav>
             
             <!-----Adding projects panel(in process of automation)-->
@@ -22,7 +22,7 @@
                     <img src="/main/images/website1.png"> 
                     <p>Personal ePortfolio</p>
                 </div>
-                <div class="project-item" onclick="zoomTransition(this)">
+                <div class="project-item" onclick="zoomTransition(this, 'WebsiteTemplate.html')">
                     <img src="/main/images/website2.png"> 
                     <p>Business Website</p>
                 </div>
@@ -189,6 +189,8 @@ async function loadProjects() {
 window.addEventListener('DOMContentLoaded', loadProjects);
 
 </script>
+
+<script src="Animation.js"></script>
 
 </body>
 
