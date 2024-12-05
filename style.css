@@ -725,11 +725,11 @@ buttons{
     /*ePortfolio*/
        /*Carousel section*/
        .carousel {
-        position: relative;
- 
-        width: 100%; /* Ensures the carousel container fits the screen */
+            position: fixed;
+            }
+    .img-fit{
+        background-image: url(/main/images/sp.jpg);
     }
-    
     
        .carousel .list .item img {
         content: none; /* Not required but safe to remove `content` property */
