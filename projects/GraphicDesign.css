@@ -39,6 +39,7 @@
   }
   .add{
     width: 20px;
+    display: none;
   }
   .button-group .button{
     display: inline-block;
