@@ -36,6 +36,7 @@ nav h1{
     cursor: pointer;
 }
 .calculator{
+    position: fixed;
     margin-top: 50px;
     height: 100vh;
     width: 100%;
