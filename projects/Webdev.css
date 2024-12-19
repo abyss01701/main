@@ -33,6 +33,7 @@ nav {
 }
 .add {
     width: 30px;
+    display: none;
 }
 nav h1 {
     flex-grow: 1;
