@@ -194,9 +194,10 @@
 .section-head h1{
   font-size: 60px;
   align-items: center;
+  margin-left: 20px;
 }
 .logo{
-  margin-left: 10px;
+  margin-left: 20px;
   align-items: center;        /*ADD THIS*/
 }
 .button-group{
