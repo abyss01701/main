@@ -15,7 +15,7 @@
 <section class="portfolio">
 	
 	<header class="section-head">
-        <a href="/main/index.html"> <img src="/main/images/logo1.png" class="logo"></a>
+        <a href="../index.html"> <img src="../images/logo1.png" class="logo"></a>
 		<a href="#" id="add-gallery-image" class="admin-btn"><img src="/main/images/add.png" class="add"></a>
 
 		<h1> Design Gallery</h1>
@@ -37,7 +37,7 @@
 			
 			<!--  *****  Card 1 Starts  *****  -->
 			<div class="item development">
-				<img src="/main/images/2.gif">
+				<img src="../images/2.gif">
 				<div class="overlay">
 					
 				</div>
@@ -46,7 +46,7 @@
 
 			<!--  *****  Card 2 Starts  *****  -->
 			<div class="item development">
-				<img src="/main/images/2.gif">
+				<img src="../images/2.gif">
 				<div class="overlay">
 					
 				</div>
@@ -55,7 +55,7 @@
 
 			<!--  *****  Card 3 Starts  *****  -->
 			<div class="item development">
-				<img src="/main/images/2.gif">
+				<img src="../images/2.gif">
 				<div class="overlay">
 					
 				</div>
@@ -64,7 +64,7 @@
 
             	<!--  *****  Card 4 Starts  *****  -->
 			<div class="item design">
-				<img src="/main/images/3.jpg">
+				<img src="../images/3.jpg">
 				<div class="overlay">
 				
 				</div>
@@ -73,7 +73,7 @@
 
             	<!--  *****  Card 5 Starts  *****  -->
 			<div class="item development">
-				<img src="/main/images/`0.gif">
+				<img src="../images/`0.gif">
 				<div class="overlay">
 				
 				</div>
@@ -82,7 +82,7 @@
 
             	<!--  *****  Card 6 Starts  *****  -->
 			<div class="item design">
-				<img src="/main/images/background.png">
+				<img src="../images/background.png">
 				<div class="overlay">
 				
 				</div>
@@ -91,7 +91,7 @@
               
             	<!--  *****  Card 7 Starts  *****  -->
 			<div class="item design">
-				<img src="/main/images/6.jpg">
+				<img src="../images/6.jpg">
 				<div class="overlay">
 				
 				</div>
@@ -100,7 +100,7 @@
 
             	<!--  *****  Card 8 Starts  *****  -->
 			<div class="item development">
-				<img src="/main/images/9.jpg">
+				<img src="../images/9.jpg">
 				<div class="overlay">
 					
 				</div>
@@ -109,7 +109,7 @@
 
             <!--  *****  Card 9 Starts  *****  -->
 			<div class="item design">
-				<img src="/main/images/background2.jpg">
+				<img src="../images/background2.jpg">
 				<div class="overlay">
 				
 				</div>
@@ -118,7 +118,7 @@
 
                  <!--  *****  Card 10 Starts  *****  -->
 			<div class="item design">
-				<img src="/main/images/11.jpg">
+				<img src="../images/11.jpg">
 				<div class="overlay">
 				
 				</div>
@@ -127,7 +127,7 @@
 
                  <!--  *****  Card 11 Starts  *****  -->
 			<div class="item development">
-				<img src="/main/images/8.gif">
+				<img src="../images/8.gif">
 				<div class="overlay">
 					
 				</div>
@@ -136,7 +136,7 @@
 
 			 <!--  *****  Card 12 Starts  *****  -->
 			 <div class="item logo">
-				<img src="/main/images/ABYSS-2.png">
+				<img src="../images/ABYSS-2.png">
 				<div class="overlay">
 			
 				</div>
@@ -145,7 +145,7 @@
 
 			 <!--  *****  Card 13 Starts  *****  -->
 			 <div class="item logo">
-				<img src="/main/images/Abyss-logo-3.png">
+				<img src="../images/Abyss-logo-3.png">
 				<div class="overlay">
 					<a href="#">VIEW MORE</a>
 				</div>
@@ -154,7 +154,7 @@
 
 			 <!--  *****  Card 14 Starts  *****  -->
 			 <div class="item logo">
-				<img src="/main/images/logo1.png">
+				<img src="../images/logo1.png">
 				<div class="overlay">
 					<a href="#">VIEW MORE</a>
 				</div>
@@ -309,22 +309,6 @@
                 galleryModal.style.display = 'none';
 
 
-					// newGalleryImg.innerHTML = `
-					// 	<img src="http://localhost:5000/uploads/${project.i}" alt="${project.category}">
-					// 	 <div class="overlay">
-                    // 		<a href="#">VIEW MORE</a>
-                	// 	</div>
-					// `;
-	
-					// // Add the new project to the grid
-					// document.querySelector('#gallery').appendChild(newGalleryImg);
-
-					// // Trigger Isotope to re-layout after adding a new item
-					// $galleryContainer.isotope('reloadItems').isotope('layout');
-	
-					// // Clear the input fields and close the modal
-					// galleryImageInput.value = '';
-					// galleryModal.style.display = 'none';
 				} else {
 					alert('Error saving project. Please try again.');
 				}
@@ -374,125 +358,6 @@
 	window.addEventListener('DOMContentLoaded', loadProjects);
 	
 	</script>
-<!-- <script>
-    // Get elements for the gallery modal
-    const galleryModal = document.getElementById('gallery-modal');
-    const galleryButton = document.getElementById('add-gallery-image');
-    const closeGalleryModal = document.getElementById('close-gallery-modal');
-    const galleryCategoryInput = document.getElementById('opt');
-    const galleryForm = document.getElementById('gallery-form');
-    const galleryInput = document.getElementById('gallery-image');
-    
-    // Open the gallery modal
-    galleryButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        galleryModal.style.display = 'block';
-    });
-    
-    // Close the gallery modal
-    closeGalleryModal.addEventListener('click', () => {
-        galleryModal.style.display = 'none';
-    });
-    
-    // Close the modal when clicking outside it
-    window.addEventListener('click', (e) => {
-        if (e.target === galleryModal) {
-            galleryModal.style.display = 'none';
-        }
-    });
-    
-    galleryForm.addEventListener('submit', async (e) => {
-    e.preventDefault(); // Prevent form from refreshing the page
 
-    // Get the uploaded file and category
-    const file = galleryInput.files[0];
-    const category = galleryCategoryInput.value;
-
-    if (file && category) {
-        const formData = new FormData();
-        formData.append('image', file);
-        formData.append('category', category);
-
-        try {
-            // Send data to the backend
-            const response = await fetch('http://localhost:5000/gallery', {
-                method: 'POST',
-                body: formData,
-            });
-
-            if (response.ok) {
-                const project = await response.json(); // Response from the backend
-
-                // Log the response to see if it contains the correct image URL
-                console.log(project);
-
-                // Check if the response contains the image URL
-                if (project && project.imageUrl) {
-                    // Create a new gallery item
-                    const newItem = document.createElement('div');
-                    newItem.className = `item ${category.toLowerCase()}`; // Add category as a class
-                    newItem.innerHTML = `
-                        <img src="${project.imageUrl}" alt="New Gallery Image">
-                        <div class="overlay">
-                            <a href="#">VIEW MORE</a>
-                        </div>
-                    `;
-
-                    // Add the new item to the gallery
-                    const galleryContainer = document.querySelector('.gallery');
-                    galleryContainer.appendChild(newItem);
-
-                    // Refresh Isotope to include the new item
-                    if (window.$galleryContainer) {
-                        $galleryContainer.isotope('appended', newItem);
-                    }
-
-                    // Clear the input and close the modal
-                    galleryInput.value = '';
-                    galleryModal.style.display = 'none';
-                } else {
-                    alert('Error: Image URL not returned from the server.');
-                }
-            } else {
-                alert('Error saving project. Please try again.');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            alert('An error occurred while saving the project.');
-        }
-    } else {
-        alert('Please provide both a project name and an image.');
-    }
-});
-
-// Function to load projects from the backend
-async function loadGallery() {
-    try {
-        const response = await fetch('http://localhost:5000/gallery');
-        if (response.ok) {
-            const gallerys = await response.json();
-
-            // Add each project to the grid
-           gallerys.forEach((gallery) => {
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'gallery-item';
-
-                galleryItem.innerHTML = `
-                        <img src="${gallery.imageUrl}" alt="New Gallery Image">
-                        <div class="overlay">
-                            <a href="#">VIEW MORE</a>
-                        </div>
-                    `;
-                document.querySelector('.gallery').appendChild(galleryItem);
-            });
-        } else {
-            console.error('Failed to load projects');
-        }
-    } catch (error) {
-        console.error('Error:', error);
-    }
-}
-   
-    </script> -->
 </body>
 </html>
