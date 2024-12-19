@@ -154,6 +154,9 @@ nav h1 {
     .grid-container{
         display: block;
     }
+    .add{
+        display:none;
+    }
     .grid-container .project-item img{
         width: 100%;
     }
