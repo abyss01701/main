@@ -10,3 +10,7 @@ Features
   
 Feel free to explore and connect with me via the provided social links!
 
+
+<p align="center">
+  <img src="4.gif" width="300">
+</p>
