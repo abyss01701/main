@@ -15,9 +15,8 @@ Feel free to explore and connect with me via the provided social links!
   <img src="/images/4.gif" width="300">
 </p>
 
-# Connect with Me
+<a href="https://www.facebook.com/XxAni10NxX/"><img src="images/facebook.png" alt="Facebook" width="20px"></a>
+<a href="https://www.instagram.com/incarcerated_abyss/"><img src="images/instagram.png" alt="Instagram" width="20px"></a>
+<a href="https://x.com/incarcerated_ab"><img src="images/twitter.png" alt="X (formerly Twitter)" width="20px"></a>
+<a href="https://www.linkedin.com/in/akshat-newal-700021268/"><img src="images/linkedin.png" alt="LinkedIn" width="20px"></a>
 
-[![Facebook](images/facebook.png)](https://www.facebook.com/XxAni10NxX/)
-[![Instagram](images/instagram.png)](https://www.instagram.com/incarcerated_abyss/)
-[![X (formerly Twitter)](images/twitter.png)](https://x.com/incarcerated_ab)
-[![LinkedIn](images/linkedin.png)](https://www.linkedin.com/in/akshat-newal-700021268/)
