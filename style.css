@@ -161,7 +161,20 @@ nav ul li a:hover::after{
 .tab-content.active-tab{
     display: block;
 }
-
+.certi-btn{
+    background-color: #ee7a06;
+    display: block;
+    width: 60px;
+    height: 30px;
+    border-radius: 10px;
+    margin-top: 5px;
+    transition: 0.5s;
+}
+.certi-btn:hover{
+    background-color: #000000;
+    color: #fff;
+    transform: scale(1.05); 
+}
 /*-------------Services-----------------*/
 #services{
     padding: 30px 0;
