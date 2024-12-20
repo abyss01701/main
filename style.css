@@ -121,8 +121,10 @@ nav ul li a:hover::after{
     color: white;
 }
 .tab-titles{
-    display: flex;
     margin: 20px 0 40px;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */  
+    gap: 10px; /* Add spacing between tabs */
 }
 .tab-links{
     margin-right: 50px;
@@ -161,7 +163,7 @@ nav ul li a:hover::after{
 .tab-content.active-tab{
     display: block;
 }
-/* .certi-btn{
+.certi-btn{
     background-color: #ee7a06;
     display: block;
     width: 60px;
@@ -174,7 +176,7 @@ nav ul li a:hover::after{
     background-color: #000000;
     color: #fff;
     transform: scale(1.05); 
-} */
+}
 /*-------------Services-----------------*/
 #services{
     padding: 30px 0;
