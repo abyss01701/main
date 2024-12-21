@@ -192,7 +192,7 @@ nav ul li a:hover::after{
 
 .glow-background:hover {
     background-color: #1a1a1a; /* Slightly lighter background on hover */
-    box-shadow: 0 0 10px #00eaff, 0 0 50px #05cdf0, 0 0 45px #03b1f6, 0 0 40px #22fbff; /* Glowing effect */
+    box-shadow: 0 0 10px #00eaff, 0 0 50px #05cdf0, 0 0 15px #03b1f6, 0 0 10px #22fbff; /* Glowing effect */
 }
 /*-------------Services-----------------*/
 #services{
