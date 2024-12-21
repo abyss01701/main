@@ -172,6 +172,8 @@ nav ul li a:hover::after{
     border-radius: 10px;
     margin-top: 5px;
     transition: 0.5s;
+    font-size: 13px;
+    font-weight: 400;
 }
 .certi-btn:hover{
     background-color: #ffffff;
