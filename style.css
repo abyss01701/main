@@ -174,8 +174,8 @@ nav ul li a:hover::after{
     transition: 0.5s;
 }
 .certi-btn:hover{
-    background-color: #000000;
-    color: #fff;
+    background-color: #ffffff;
+    color: #000000;
     transform: scale(1.05); 
 }
 /*-------------Services-----------------*/
